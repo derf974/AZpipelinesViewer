@@ -6,7 +6,10 @@ name: Node.js Package
 on:
   release:
     types: [created]
-
+  push:
+    branches:
+      - main
+      - simple_ci_cd
 jobs:
   publish-gpr:
     runs-on: ubuntu-latest
