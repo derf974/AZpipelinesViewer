@@ -57,7 +57,7 @@ jobs:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v4.1.0
       - name: "Unarchive build"
-        run: "unzip Build.zip"
+        run: "ls Build/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
