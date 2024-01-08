@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Stepper from '@mui/joy/Stepper';
 import Step from '@mui/joy/Step';
 import StepIndicator from '@mui/joy/StepIndicator'
+import { Typography } from '@mui/joy';
 import {SuccessIcon,FailedIcon,CancelIcon,SkippedIcon} from './icons'
 
 const StepProgressBar = ({ stages,filteredStage }) => {
@@ -46,12 +47,11 @@ const StepProgressBar = ({ stages,filteredStage }) => {
                                                 <Step orientation="vertical"
                                                   indicator={
                                                     <>
-                                                    <label>{console.log(stage.status + '/' + stage.result )}</label>
                                                     <StepIndicator variant="solid" color={ref_result[`${stage.status}.${stage.result}`]} >
                                                       {getStatus(stage.status,stage.result)}
                                                     </StepIndicator>
                                                     </>
-                                                  }>{stage.name}</Step>
+                                                  }><Typography level="body-xs">{stage.name}</Typography></Step>
                     ))}
                     </Stepper>
                 </div>
