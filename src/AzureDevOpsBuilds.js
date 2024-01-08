@@ -4,7 +4,7 @@ import { CssVarsProvider } from '@mui/joy/styles';
 import Sheet from '@mui/joy/Sheet';
 import FormControl from '@mui/joy/FormControl';
 import FormLabel from '@mui/joy/FormLabel';
-import { Autocomplete, Chip } from "@mui/joy"
+import { Autocomplete, Chip,Container } from "@mui/joy"
 import Input from '@mui/joy/Input';
 import Card from '@mui/joy/Card';
 import '@fontsource/inter';
@@ -98,6 +98,7 @@ const AzureDevOpsBuilds = () => {
 
   return (
     <div className="container mt-4">
+      <Container sx={{ "width" : "70%" }} >
       <CssVarsProvider>
       <Sheet variant="plain">
         <Card >
@@ -123,10 +124,11 @@ const AzureDevOpsBuilds = () => {
           />
         </FormControl>
         <FormControl>
-          <FormLabel>Build IDs (un par ligne) :</FormLabel>
+          <FormLabel>Build IDs (press enter to validate) :</FormLabel>
           <Autocomplete
             clearIcon={false}
             options={[]}
+            sx={{ height : "5lh" }}
             freeSolo
             multiple
             value={buildIds}
@@ -154,6 +156,8 @@ const AzureDevOpsBuilds = () => {
         </Card>
       </Sheet>
       </CssVarsProvider>
+      </Container>
+      <Container sx={{  }}>
       <div className="mt-4">
         {buildsData.length > 0 ? (
           <table className="table">
@@ -182,6 +186,7 @@ const AzureDevOpsBuilds = () => {
           <p>Aucune donnée de build à afficher pour le moment.</p>
         )}
       </div>
+      </Container>
     </div>
   );
 };
